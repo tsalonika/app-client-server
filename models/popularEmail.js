@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 const PopularEmail = {
   getPopularEmail: (userId, callback) => {
     db.query(
-      "SELECT email, total FROM popular_email WHERE user = ?",
+      "SELECT email, total FROM popular_email WHERE user = ? ORDER BY total DESC",
       [userId],
       (err, results) => {
         if (err) return callback(err, null);

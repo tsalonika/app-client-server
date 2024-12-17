@@ -10,7 +10,7 @@ const db = mysql.createConnection({
 const PopularMention = {
   getPopularHashtag: (userId, callback) => {
     db.query(
-      "SELECT mention, total FROM popular_mention WHERE user = ?",
+      "SELECT mention, total FROM popular_mention WHERE user = ? ORDER BY total DESC",
       [userId],
       (err, results) => {
         if (err) return callback(err, null);
