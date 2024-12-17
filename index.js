@@ -17,6 +17,7 @@ const popularPhoneNumberRoutes = require("./routes/popularPhoneNumberRoutes");
 const accountSentimentRoutes = require("./routes/accountSentimentRoutes");
 const onlineActivityRoutes = require("./routes/onlineActivityRoutes");
 const userRoutes = require("./routes/userRoutes");
+const fakeAccountRoutes = require("./routes/fakeAccountRoutes");
 
 app.use("/api/account", accountRoutes);
 app.use("/api/postEngagement", postEngagementRoutes);
@@ -29,6 +30,7 @@ app.use("/api/popularPhoneNumber", popularPhoneNumberRoutes);
 app.use("/api/accountSentiment", accountSentimentRoutes);
 app.use("/api/onlineActivity", onlineActivityRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/fakeAccount", fakeAccountRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at port ${port}`);
